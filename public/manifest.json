@@ -1,0 +1,17 @@
+
+{
+  "short_name": "GoodReads",
+  "name": "Good Reads Book Search",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/bookSearch.png",
+      "type": "image/png"
+    }
+  ]
+}
+
