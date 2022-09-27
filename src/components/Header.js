@@ -8,7 +8,6 @@ import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { LoginStatus } from '../actions'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -41,13 +40,10 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Header = () => {
-  const status = useSelector(state => state.LoginStatus.status)
   const dispatch = useDispatch()
   const classes = useStyles()
 
-  const logout = () => {
-    dispatch(LoginStatus(false))
-  }
+ 
 
   return (
     <div className={classes.root}>
@@ -75,23 +71,13 @@ const Header = () => {
               Home
             </Button>
           </Link>
-          {status ? (
-            <Link to='/Login' className={classes.loginLink}>
-              <Button
-                variant='contained'
-                className={classes.loginBtn}
-                onClick={logout}
-              >
-                Logout
-              </Button>
-            </Link>
-          ) : (
+      
             <Link to='/Login' className={classes.loginLink}>
               <Button variant='contained' className={classes.loginBtn}>
                 Login
               </Button>
             </Link>
-          )}
+
         </Toolbar>
       </AppBar>
     </div>

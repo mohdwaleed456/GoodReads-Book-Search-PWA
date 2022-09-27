@@ -5,8 +5,6 @@ import BookImage from './BookImage'
 import BookRating from './BookRating'
 import Signin from './Signin'
 
-import LoginStatus from './LoginStatus'
-
 import { combineReducers } from 'redux'
 
 const rootReducer = combineReducers({
@@ -16,7 +14,6 @@ const rootReducer = combineReducers({
   BookImage,
   BookRating,
   Signin,
-  LoginStatus
 })
 
 export default rootReducer

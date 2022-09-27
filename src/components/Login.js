@@ -78,10 +78,9 @@ const Login = () => {
   // console.log(email)
   const [password, setPassword] = useState('')
   // const [name, setName] = useState('')
-  const [loginStatus, setLoginStatus] = useState()
+
   const dispatch = useDispatch()
   const reference = useRef(false)
-  dispatch(LoginStatus(reference.current))
   const users = useSelector(state => state.Signin)
 
   const classes = useStyles()
@@ -99,14 +98,12 @@ const Login = () => {
       let e = users.find(o => o.email === email)
       let p = users.find(o => o.password === password)
       if (email === e['email'] && password === p['password']) {
-        console.log('asksdkss')
-        reference.current = true
-        dispatch(LoginStatus(reference.current))
+        
         navigate('/')
       }
     } catch (err) {
       reference.current = false
-      dispatch(LoginStatus(reference.current))
+
       console.log(err)
       if (!email) {
         toast.error('Please enter your email!', {
@@ -146,7 +143,7 @@ const Login = () => {
   //   navigate('/')
   // }
 
-  useEffect(() => {}, [loginStatus])
+ 
   const handleKeypress = e => {
     //it triggers by pressing the enter key
     if (e.key === 'Enter') {

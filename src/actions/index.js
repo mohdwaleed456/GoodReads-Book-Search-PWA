@@ -48,10 +48,3 @@ export const Signin = users => {
     payload: users
   }
 }
-
-export const LoginStatus = status => {
-  return {
-    type: 'LOGIN_STATUS',
-    payload: status
-  }
-}
